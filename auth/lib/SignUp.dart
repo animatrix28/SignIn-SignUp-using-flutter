@@ -1,8 +1,10 @@
+import 'package:auth/SplashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:auth/components/rounded_button.dart';
 import 'constraints.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:toast/toast.dart';
 
 class SignUp extends StatefulWidget {
   static const String id = 'SignUp_screen';
@@ -14,8 +16,8 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   final _auth = FirebaseAuth.instance;
   bool showSpinner = false;
-  String email = "";
-  String password = "";
+  late String email;
+  late String password;
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +35,9 @@ class _SignUpState extends State<SignUp> {
                 child: Hero(
                   tag: 'logo',
                   child: Container(
-                    height: 200.0,
-                    child: Image.asset('images/logo.png'),
+                    height: 60.0,
+                    width: 60.0,
+                    child: Image.asset('assets/images/temp.jpg'),
                   ),
                 ),
               ),
@@ -75,18 +78,16 @@ class _SignUpState extends State<SignUp> {
                   try {
                     final newUser = await _auth.createUserWithEmailAndPassword(
                         email: email, password: password);
-                    if (newUser != null) {
-                      // Navigator.pushNamed(context, ChatScreen.id);
-                      AlertDialog(
-                        title: Text("Working"),
-                      );
-                    }
+
+                    Navigator.pushNamed(context, SplashScreen.id);
 
                     setState(() {
                       showSpinner = false;
                     });
                   } catch (e) {
                     print(e);
+                    Toast.show("$e", context,
+                        duration: Toast.LENGTH_SHORT, gravity: Toast.BOTTOM);
                   }
                 },
               ),

@@ -1,3 +1,4 @@
+import 'package:auth/SplashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:auth/components/rounded_button.dart';
 import 'package:auth/constraints.dart';
@@ -32,8 +33,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Hero(
                   tag: 'logo',
                   child: Container(
-                    height: 200.0,
-                    child: Image.asset('images/logo.png'),
+                    height: 60.0,
+                    width: 60,
+                    child: Image.asset('assets/images/temp.jpg'),
                   ),
                 ),
               ),
@@ -75,10 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     final user = await _auth.signInWithEmailAndPassword(
                         email: email, password: password);
                     if (user != null) {
-                      // Navigator.pushNamed(context, ChatScreen.id);
-                      AlertDialog(
-                        title: Text("Working"),
-                      );
+                      Navigator.pushNamed(context, SplashScreen.id);
                     }
 
                     setState(() {
