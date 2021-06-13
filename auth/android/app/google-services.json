@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "780564583048",
+    "project_id": "trip-planner-and-recommender",
+    "storage_bucket": "trip-planner-and-recommender.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780564583048:android:448366ed1e89c8c0c4c53d",
+        "android_client_info": {
+          "package_name": "com.example.auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780564583048-cmpuhgj87bkso5h4ic82plgsj2k23ivq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDW3PASubHQRvcfT9pe54CVpRZlMYLNBEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780564583048-cmpuhgj87bkso5h4ic82plgsj2k23ivq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
